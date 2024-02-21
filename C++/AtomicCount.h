@@ -22,6 +22,8 @@
 #ifndef ATOMIC_COUNT
 #define ATOMIC_COUNT
 
+#include <atomic>
+
 #include "Utility.h"
 
 #if defined(__SUNPRO_CC) ||  defined(__TOS_AIX__)
