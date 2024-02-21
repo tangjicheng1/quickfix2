@@ -24,7 +24,7 @@ class build_ext_subclass( build_ext ):
 
         print("Testing for std::shared_ptr...")
         try:
-            self.compiler.compile(['test_std_shared_ptr.cpp'], extra_preargs=['-std=c++0x']),
+            self.compiler.compile(['test_std_shared_ptr.cpp'], extra_preargs=['-std=c++11']),
             self.compiler.define_macro("HAVE_STD_SHARED_PTR")
             print("...found")
         except:
@@ -32,7 +32,7 @@ class build_ext_subclass( build_ext ):
 
         print("Testing for std::unique_ptr...")
         try:
-            self.compiler.compile(['test_std_unique_ptr.cpp'], extra_preargs=['-std=c++0x']),
+            self.compiler.compile(['test_std_unique_ptr.cpp'], extra_preargs=['-std=c++11']),
             self.compiler.define_macro("HAVE_STD_UNIQUE_PTR")
             print("...found")
         except:
@@ -65,5 +65,5 @@ setup(name='quickfix',
       license=license,
       include_dirs=['C++'],
       cmdclass = {'build_ext': build_ext_subclass },
-      ext_modules=[Extension('_quickfix', glob.glob('C++/*.cpp'), extra_compile_args=['-std=c++0x', '-Wno-deprecated', '-Wno-unused-variable', '-Wno-deprecated-declarations', '-Wno-maybe-uninitialized'])],
+      ext_modules=[Extension('_quickfix', glob.glob('C++/*.cpp'), extra_compile_args=['-std=c++11', '-Wno-deprecated', '-Wno-unused-variable', '-Wno-deprecated-declarations', '-Wno-maybe-uninitialized'])],
 )

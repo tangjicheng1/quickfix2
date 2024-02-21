@@ -1,6 +1,6 @@
-#include <tr1/memory>
+#include <memory>
 
 int main(int argc, char** argv)
 {
-  std::tr1::shared_ptr<int> o;
+  std::shared_ptr<int> o;
 }
