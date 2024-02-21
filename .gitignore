@@ -1,3 +1,6 @@
 build/
 .vscode/
 *.o
+__pycache__/
+dist/
+quickfix.egg-info/
