@@ -1,5 +1,5 @@
 MANIFEST
-*egg-info
+quickfix2.egg-info/
 build/
 .vscode/
 *.o
