@@ -51,8 +51,8 @@ long_description=''
 with open('LICENSE') as file:
     license = file.read();
 
-setup(name='quickfix',
-      version='1.15.1',
+setup(name='quickfix2',
+      version='0.0.1',
       py_modules=['quickfix', 'quickfixt11', 'quickfix40', 'quickfix41', 'quickfix42', 'quickfix43', 'quickfix44', 'quickfix50', 'quickfix50sp1', 'quickfix50sp2'],
       data_files=[('share/quickfix', glob.glob('spec/FIX*.xml'))],
       author='Oren Miller',
@@ -65,5 +65,5 @@ setup(name='quickfix',
       license=license,
       include_dirs=['C++'],
       cmdclass = {'build_ext': build_ext_subclass },
-      ext_modules=[Extension('_quickfix', glob.glob('C++/*.cpp'), extra_compile_args=['-std=c++11', '-Wno-deprecated', '-Wno-unused-variable', '-Wno-deprecated-declarations', '-Wno-uninitialized'])],
+      ext_modules=[Extension('_quickfix', glob.glob('C++/*.cpp'), extra_compile_args=['-std=c++11', '-Wno-deprecated', '-Wno-unused-variable', '-Wno-deprecated-declarations', '-Wno-uninitialized', '-static-libstdc++'], extra_link_args=["-static-libstdc++"])],
 )
