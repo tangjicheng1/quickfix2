@@ -27,9 +27,11 @@ for key, value in cfg_vars.items():
     if type(value) == str:
         cfg_vars[key] = value.replace("-Wstrict-prototypes", "")
         
-long_description=''
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
 with open('LICENSE') as file:
-    license = file.read();
+    license = file.read()
 
 setup(name='quickfix2',
       version='0.0.1',
@@ -38,6 +40,8 @@ setup(name='quickfix2',
       maintainer='tangjicheng',
       maintainer_email='tangjch15@gmail.com',
       description="FIX (Financial Information eXchange) protocol implementation; original author: Oren Miller, oren@quickfixengine.org",
+      long_description=long_description,
+      long_description_content_type="text/markdown",
       license=license,
       include_dirs=['C++'],
       cmdclass = {'build_ext': build_ext_subclass },

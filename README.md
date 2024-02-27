@@ -1,5 +1,9 @@
 # Quickfix2
 
+## description
+same with quickfix, but build for linux and macos.
+
+
 ## build
 ```
 pip install -U setuptools wheel twine
