@@ -30,4 +30,4 @@ jobs:
         if [ -f requirements.txt ]; then pip install -U -r requirements.txt; fi
     - name: Build package
       run: |
-        python ./setup.py bdist_wheel
+        python ./setup.py bdist_wheel --plat-name=manylinux1_x86_64
