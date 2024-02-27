@@ -25,7 +25,7 @@ jobs:
     - name: Install dependencies
       run: |
         apt-get update 
-        apt-get install g++ libc++-dev
+        sudo apt-get -y install g++ libc++-dev
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -U -r requirements.txt; fi
     - name: Build package
