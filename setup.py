@@ -13,6 +13,7 @@ import sys
 
 class build_ext_subclass( build_ext ):
     def build_extensions(self):
+        print("building quickfix2 ...")
         self.compiler.define_macro("PYTHON_MAJOR_VERSION", sys.version_info[0])
         self.compiler.define_macro("HAVE_STD_TR1_SHARED_PTR")
         self.compiler.define_macro("HAVE_STD_SHARED_PTR")
