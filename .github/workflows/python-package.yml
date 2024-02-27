@@ -25,7 +25,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        apt-get update 
+        sudo apt-get update 
         sudo apt-get -y install g++ libc++-dev
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -U -r requirements.txt; fi
